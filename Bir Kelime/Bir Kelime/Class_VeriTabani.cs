@@ -3,40 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HtmlAgilityPack;
+using System.Net;
 
 namespace Bir_Kelime
 {
     class Class_VeriTabani
     {
         public List<string> Harfler = new List<string>();
-        public List<string> Kelimeler = new List<string>();
+        private List<string> Kelimeler = new List<string>();
 
         public Class_VeriTabani()
         {
-            //SENİ SEVİYORUUUUUMMMMMMMMM
-            Kelimeler.Add("MİNNAK");
-
-            //9 Harfliler
-            Kelimeler.Add("AŞKOOOOOO");
-
-            //8 Harfliler
-            Kelimeler.Add("AŞKOOOOO");
-
-            //7 Harfliler
-            Kelimeler.Add("AŞKOOOO");
-
-            //6 Harfliler
-            Kelimeler.Add("AŞKOOO");
-
-            //5 Harfliler
-            Kelimeler.Add("AŞKOO");
-
-            //4 Harfliler
-            Kelimeler.Add("AŞKO");
-
-            //3 Harfliler
-            Kelimeler.Add("AŞK");
-
             //Harfler
             Harfler.Add("a");
             Harfler.Add("b");
@@ -66,6 +44,16 @@ namespace Bir_Kelime
             Harfler.Add("v");
             Harfler.Add("y");
             Harfler.Add("z");
+        }
+
+        public List<string> Dondur(char[] Gelen)
+        {
+            Kelimeler.Clear();
+
+            
+            
+
+            return Kelimeler;
         }
     }
 }
