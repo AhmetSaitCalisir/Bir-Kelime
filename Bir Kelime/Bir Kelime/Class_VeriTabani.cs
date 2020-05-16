@@ -10,12 +10,11 @@ namespace Bir_Kelime
 {
     class Class_VeriTabani
     {
-        public List<string> Harfler = new List<string>();
+        private List<string> Harfler = new List<string>();
         private List<string> Kelimeler = new List<string>();
 
         public Class_VeriTabani()
         {
-            //Harfler
             Harfler.Add("a");
             Harfler.Add("b");
             Harfler.Add("c");
@@ -50,10 +49,42 @@ namespace Bir_Kelime
         {
             Kelimeler.Clear();
 
-            
-            
+            HtmlWeb html = new HtmlWeb();
 
+            foreach (var Harf in Gelen)
+            {
+                for (int HarfSayisi = 9; HarfSayisi > 2; HarfSayisi--)
+                {
+                    HtmlAgilityPack.HtmlDocument htmlDocument = html.Load("https://kelimeler.net/" + Harf + "-ile-baslayan-" + HarfSayisi.ToString() + "-harfli-kelimeler");
+                    if (Harf != 'ğ')
+                    {
+                        foreach (HtmlNode htmlNode in htmlDocument.DocumentNode.SelectNodes("//*[@class='ListedWordLink mobile-link']"))
+                        {
+                            Kelimeler.Add(ReplaceText(htmlNode.InnerText));
+                        }
+                    }
+                }
+            }
             return Kelimeler;
+        }
+
+        public char[] Rastgele_Harfler()
+        {
+            char[] Donecek = new char[8];
+            Random random = new Random();
+            int rastgele;
+            for (int i = 0; i < 8; i++)
+            {
+                rastgele = random.Next(0, Harfler.Count);
+                Donecek[i] = Convert.ToChar(Harfler[rastgele]);
+            }
+            return Donecek;
+        }
+
+        public string ReplaceText(string _text)
+        {
+            _text = _text.Replace("&#199;", "Ç").Replace("&#220;", "Ü").Replace("&#214;", "Ö");
+            return _text;
         }
     }
 }

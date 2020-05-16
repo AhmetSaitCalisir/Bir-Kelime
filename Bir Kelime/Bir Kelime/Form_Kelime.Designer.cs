@@ -111,6 +111,7 @@
             this.button_Tekrarla.TabIndex = 6;
             this.button_Tekrarla.Text = "Tekrarla";
             this.button_Tekrarla.UseVisualStyleBackColor = true;
+            this.button_Tekrarla.Click += new System.EventHandler(this.button_Tekrarla_Click);
             // 
             // button_Cikis
             // 
@@ -127,7 +128,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(711, 416);
+            this.ClientSize = new System.Drawing.Size(701, 416);
             this.Controls.Add(this.button_Cikis);
             this.Controls.Add(this.button_Tekrarla);
             this.Controls.Add(this.label_Puan);
