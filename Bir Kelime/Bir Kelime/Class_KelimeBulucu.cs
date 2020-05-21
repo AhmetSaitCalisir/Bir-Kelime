@@ -12,7 +12,7 @@ namespace Bir_Kelime
         private Class_VeriTabani veriTabani = new Class_VeriTabani();
         public string Cozum(Char[] Gelen)
         {
-            string Bulunan = "Sonuç Bulunamadı";
+            string Bulunan = "Bulunamadı";
             int Puan = 0;
             string GeciciKelime;
             List<string> Kelimeler = veriTabani.Dondur(Gelen);
